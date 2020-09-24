@@ -239,13 +239,17 @@ public class MainActivity extends AppCompatActivity {
         b_para2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!t2.getText().toString().isEmpty() || !t1.getText().toString().isEmpty()) {
-                    val1 = Double.parseDouble(t1.getText().toString());
-                    ACTION = EXTRA;
-                    t2.setText("-" + t1.getText().toString());
-                    t1.setText("");
-                } else {
-                    t2.setText("Error");
+                try {
+                    if (!t2.getText().toString().isEmpty() || !t1.getText().toString().isEmpty()) {
+                        val1 = Double.parseDouble(t1.getText().toString());
+                        ACTION = EXTRA;
+                        t2.setText("-" + t1.getText().toString());
+                        t1.setText("");
+                    } else {
+                        t2.setText("Input number first");
+                    }
+                }catch(NumberFormatException e){
+                    t2.setText("Input number first");
                 }
             }
         });
