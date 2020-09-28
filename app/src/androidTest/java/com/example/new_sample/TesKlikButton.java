@@ -25,7 +25,7 @@ public class TesKlikButton {
         //cari id button1 terus di klik
         onView(withId(R.id.button1)).perform(click());
         onView(withId(R.id.input)).check(matches(withText("1")));
-        onView(withId(R.id.button_clear)).perform(click()));
+        onView(withId(R.id.button_clear)).perform(click());
         onView(withId(R.id.button2)).perform(click());
         onView(withId(R.id.input)).check(matches(withText("2")));
     }
